@@ -1,0 +1,108 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+:root {
+  --green: #00d47e;
+  --bg: #0a0a0a;
+  --card: rgba(255,255,255,0.04);
+  --border: rgba(255,255,255,0.08);
+  --text: #e0e0e0;
+  --muted: rgba(255,255,255,0.45);
+}
+html { scroll-behavior: smooth; }
+body { background: var(--bg); color: var(--text); font-family: 'Inter', -apple-system, sans-serif; line-height: 1.6; overflow-x: hidden; }
+a { color: var(--green); text-decoration: none; }
+
+/* Animated BG */
+.bgOrbs { position: fixed; inset: 0; z-index: 0; pointer-events: none; overflow: hidden; }
+.bgOrbs::before, .bgOrbs::after {
+  content: ''; position: absolute; border-radius: 50%; filter: blur(120px); opacity: 0.12; animation: orbFloat 20s ease-in-out infinite;
+}
+.bgOrbs::before { width: 600px; height: 600px; background: var(--green); top: -200px; left: -100px; }
+.bgOrbs::after { width: 500px; height: 500px; background: #3b82f6; bottom: -200px; right: -100px; animation-delay: -10s; }
+@keyframes orbFloat { 0%,100% { transform: translate(0,0); } 50% { transform: translate(60px,40px); } }
+
+/* ScrollReveal */
+.reveal { opacity: 0; transform: translateY(30px); transition: all 0.7s cubic-bezier(0.4,0,0.2,1); }
+.reveal.visible { opacity: 1; transform: none; }
+
+/* Glass card */
+.glass {
+  background: var(--card); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
+  border: 1px solid var(--border); border-radius: 16px; transition: all 0.35s;
+}
+.glass:hover { border-color: rgba(0,212,126,0.25); box-shadow: 0 8px 30px rgba(0,212,126,0.08); transform: translateY(-3px); }
+
+/* Section */
+.section { max-width: 1100px; margin: 0 auto; padding: 5rem 1.5rem; position: relative; z-index: 1; }
+.sectionTitle { font-size: clamp(1.6rem,4vw,2.4rem); font-weight: 800; text-align: center; margin-bottom: 0.5rem; text-transform: uppercase; letter-spacing: 2px; }
+.sectionSub { text-align: center; color: var(--muted); margin-bottom: 3rem; font-size: 1rem; }
+.greenText { color: var(--green); }
+
+/* Timeline nav */
+.timelineNav {
+  position: sticky; top: 0; z-index: 100; background: rgba(10,10,10,0.85); backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--border); padding: 0.8rem 0;
+}
+.timelineInner { max-width: 1100px; margin: 0 auto; display: flex; justify-content: center; gap: 0; overflow-x: auto; padding: 0 1rem; }
+.timelineBtn {
+  padding: 0.5rem 1.2rem; border: none; background: none; color: var(--muted); font-weight: 600;
+  font-size: 0.85rem; cursor: pointer; white-space: nowrap; position: relative; transition: all 0.3s;
+}
+.timelineBtn:hover { color: #fff; }
+.timelineBtn.active { color: var(--green); }
+.timelineBtn.active::after {
+  content: ''; position: absolute; bottom: -2px; left: 50%; transform: translateX(-50%);
+  width: 20px; height: 3px; background: var(--green); border-radius: 2px;
+}
+.timelineDot { display: inline-block; width: 6px; height: 6px; border-radius: 50%; background: var(--muted); margin-right: 6px; vertical-align: middle; }
+.timelineBtn.active .timelineDot { background: var(--green); box-shadow: 0 0 8px var(--green); }
+
+/* Chat mockup */
+.chatBox { background: #111; border-radius: 14px; padding: 1rem; display: flex; flex-direction: column; gap: 10px; max-width: 500px; }
+.chatBubble { padding: 0.6rem 1rem; border-radius: 12px; font-size: 0.85rem; line-height: 1.5; max-width: 85%; }
+.chatUser { background: rgba(0,212,126,0.15); color: #fff; align-self: flex-end; border-bottom-right-radius: 4px; }
+.chatBot { background: rgba(255,255,255,0.06); color: var(--text); align-self: flex-start; border-bottom-left-radius: 4px; }
+.chatAvatar { font-size: 0.7rem; color: var(--muted); margin-bottom: 2px; }
+
+/* Badge */
+.badge { display: inline-block; padding: 4px 12px; border-radius: 20px; font-size: 0.75rem; font-weight: 600; }
+.badgeGreen { background: rgba(0,212,126,0.12); color: var(--green); border: 1px solid rgba(0,212,126,0.2); }
+.badgeCurrent { background: rgba(0,212,126,0.2); color: var(--green); border: 1px solid rgba(0,212,126,0.4); animation: pulse 2s infinite; }
+@keyframes pulse { 0%,100% { box-shadow: 0 0 0 0 rgba(0,212,126,0.3); } 50% { box-shadow: 0 0 0 8px rgba(0,212,126,0); } }
+.badgeBlue { background: rgba(59,130,246,0.12); color: #60a5fa; border: 1px solid rgba(59,130,246,0.2); }
+.badgeGold { background: rgba(245,158,11,0.12); color: #f59e0b; border: 1px solid rgba(245,158,11,0.2); }
+
+/* Quick buttons mockup */
+.quickBtns { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 10px; }
+.quickBtn { padding: 6px 14px; border-radius: 8px; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); font-size: 0.78rem; color: var(--text); }
+
+/* Pyramid */
+.pyramid { display: flex; flex-direction: column; align-items: center; gap: 8px; }
+.pyramidTier { border-radius: 10px; padding: 1rem; text-align: center; transition: all 0.3s; }
+
+/* Grid helpers */
+.grid2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; }
+.grid3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
+.grid5 { display: grid; grid-template-columns: repeat(5, 1fr); gap: 0.8rem; }
+@media (max-width: 768px) {
+  .grid2, .grid3, .grid5 { grid-template-columns: 1fr; }
+  .timelineBtn { padding: 0.4rem 0.8rem; font-size: 0.75rem; }
+}
+
+/* Mockup frame */
+.mockFrame { background: #111; border: 1px solid rgba(255,255,255,0.1); border-radius: 12px; overflow: hidden; }
+.mockHeader { background: rgba(255,255,255,0.03); padding: 8px 12px; display: flex; gap: 6px; align-items: center; border-bottom: 1px solid rgba(255,255,255,0.06); }
+.mockDot { width: 8px; height: 8px; border-radius: 50%; }
+.mockBody { padding: 1rem; }
+
+/* Flowchart */
+.flowRow { display: flex; align-items: center; justify-content: center; gap: 1rem; flex-wrap: wrap; }
+.flowBox { padding: 0.8rem 1.5rem; border-radius: 10px; text-align: center; font-weight: 600; font-size: 0.85rem; }
+.flowArrow { color: var(--green); font-size: 1.5rem; }
+
+/* Lang toggle */
+.langToggle {
+  position: fixed; top: 12px; right: 16px; z-index: 200;
+  padding: 4px 12px; border-radius: 20px; background: rgba(255,255,255,0.06); border: 1px solid var(--border);
+  color: var(--text); font-size: 0.75rem; cursor: pointer; transition: all 0.3s;
+}
+.langToggle:hover { border-color: var(--green); color: var(--green); }
