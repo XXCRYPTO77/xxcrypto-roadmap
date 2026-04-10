@@ -1,16 +1,20 @@
-import type { Metadata } from 'next'
-import './globals.css'
+import type { Metadata } from 'next';
+import './globals.css';
 
 export const metadata: Metadata = {
-  title: 'CoinW AI Agent — Make AI Trading for Every Trader',
-  description: 'Interactive product roadmap for CoinW AI Agent platform. 普惠AI交易，人人皆可轻松入局。',
-  icons: { icon: '/favicon.svg' },
-}
+  title: 'CoinW AI Agent Skills',
+  description: 'AI-Powered Crypto Trading Agent Platform',
+};
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="zh">
+      <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+      </head>
       <body>{children}</body>
     </html>
-  )
+  );
 }

@@ -1,43 +1,30 @@
 'use client';
-import { useState, useEffect } from 'react';
-import Hero from './components/Hero';
-import UserStories from './components/UserStories';
-import RoadmapTimeline from './components/RoadmapTimeline';
-import Architecture from './components/Architecture';
+import { useState } from 'react';
+import Sidebar from './components/Sidebar';
+import SkillStore from './components/SkillStore';
+import TGBot from './components/TGBot';
+import Trading from './components/Trading';
+import Marketplace from './components/Marketplace';
+import Onboarding from './components/Onboarding';
+
+const pages = ['skills', 'bot', 'trading', 'marketplace', 'onboarding'] as const;
+type Page = typeof pages[number];
 
 export default function Home() {
+  const [page, setPage] = useState<Page>('skills');
   const [lang, setLang] = useState('zh');
 
-  useEffect(() => {
-    const obs = new IntersectionObserver((entries) => {
-      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
-    }, { threshold: 0.1 });
-    document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
-    return () => obs.disconnect();
-  }, []);
-
-  // Re-observe after lang change
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      const obs = new IntersectionObserver((entries) => {
-        entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
-      }, { threshold: 0.1 });
-      document.querySelectorAll('.reveal:not(.visible)').forEach(el => obs.observe(el));
-      return () => obs.disconnect();
-    }, 100);
-    return () => clearTimeout(timer);
-  }, [lang]);
-
   return (
-    <>
-      <div className="bgOrbs" />
-      <button className="langToggle" onClick={() => setLang(l => l === 'zh' ? 'en' : 'zh')}>
-        {lang === 'zh' ? 'EN' : '中文'}
-      </button>
-      <Hero lang={lang} />
-      <UserStories lang={lang} />
-      <RoadmapTimeline lang={lang} />
-      <Architecture lang={lang} />
-    </>
+    <div className="appShell">
+      <div className="bgGlow" />
+      <Sidebar page={page} setPage={(p: string) => setPage(p as Page)} lang={lang} setLang={setLang} />
+      <main className="mainContent">
+        {page === 'skills' && <SkillStore lang={lang} />}
+        {page === 'bot' && <TGBot lang={lang} />}
+        {page === 'trading' && <Trading lang={lang} />}
+        {page === 'marketplace' && <Marketplace lang={lang} />}
+        {page === 'onboarding' && <Onboarding lang={lang} onDone={() => setPage('bot')} />}
+      </main>
+    </div>
   );
 }
