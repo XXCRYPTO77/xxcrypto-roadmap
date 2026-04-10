@@ -13,8 +13,11 @@ const orders = [
   { pair: 'SOL/USDT', side: 'Buy', sideColor: 'var(--green)', type: '市价', price: '$165.3', amount: '20 SOL', status: '✅' },
 ];
 
+import { useState } from 'react';
+
 export default function Trading({ lang }: { lang: string }) {
   const zh = lang === 'zh';
+  const [killed, setKilled] = useState(false);
   return (
     <div className="pageContainer">
       <div className="pageHeader">
@@ -125,12 +128,14 @@ export default function Trading({ lang }: { lang: string }) {
           ))}
         </div>
         <div style={{ textAlign: 'center', marginTop: 16 }}>
-          <button style={{
-            padding: '8px 24px', borderRadius: 8, border: '1px solid rgba(239,68,68,0.3)',
-            background: 'rgba(239,68,68,0.1)', color: 'var(--danger)', fontWeight: 700,
-            fontSize: '0.82rem', cursor: 'pointer'
+          <button onClick={() => setKilled(!killed)} style={{
+            padding: '8px 24px', borderRadius: 8, border: '1px solid',
+            borderColor: killed ? 'rgba(0,212,126,0.3)' : 'rgba(239,68,68,0.3)',
+            background: killed ? 'rgba(0,212,126,0.1)' : 'rgba(239,68,68,0.1)',
+            color: killed ? 'var(--green)' : 'var(--danger)', fontWeight: 700,
+            fontSize: '0.82rem', cursor: 'pointer', transition: 'all 0.3s'
           }}>
-            🛑 {zh ? '紧急熔断 — 停止所有Agent' : 'KILL SWITCH — Stop All Agents'}
+            {killed ? (zh ? '✓ 已停止 — 点击恢复' : '✓ Stopped — Click to Resume') : (zh ? '🛑 紧急熔断 — 停止所有Agent' : '🛑 KILL SWITCH — Stop All Agents')}
           </button>
         </div>
       </div>

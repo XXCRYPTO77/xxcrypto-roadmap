@@ -20,6 +20,8 @@ const communitySkills = [
 export default function Marketplace({ lang }: { lang: string }) {
   const zh = lang === 'zh';
   const [tab, setTab] = useState<'agents' | 'skills'>('agents');
+  const [following, setFollowing] = useState<Set<number>>(new Set());
+  const [installedSkills, setInstalledSkills] = useState<Set<number>>(new Set());
 
   return (
     <div className="pageContainer">
@@ -69,7 +71,10 @@ export default function Marketplace({ lang }: { lang: string }) {
                 <span>👥 {a.followers}</span>
                 <span>⭐ {a.rating}</span>
               </div>
-              <button className="followBtn">{zh ? '跟单' : 'Follow'}</button>
+              <button className="followBtn" onClick={() => { const n = new Set(following); if (n.has(i)) n.delete(i); else n.add(i); setFollowing(n); }}
+                style={following.has(i) ? { background: 'var(--green)', color: '#000', borderColor: 'var(--green)' } : {}}>
+                {following.has(i) ? (zh ? '✓ 已跟单' : '✓ Following') : (zh ? '跟单' : 'Follow')}
+              </button>
             </div>
           ))}
         </div>
@@ -87,9 +92,15 @@ export default function Marketplace({ lang }: { lang: string }) {
                     <div style={{ fontSize: '0.72rem', color: 'var(--muted)' }}>by {s.author}</div>
                   </div>
                 </div>
-                <div style={{ textAlign: 'right' }}>
-                  <div style={{ fontSize: '0.8rem' }}>⭐ {s.rating}</div>
-                  <div style={{ fontSize: '0.7rem', color: 'var(--muted)' }}>📥 {s.installs}</div>
+                <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
+                  <div style={{ textAlign: 'right' }}>
+                    <div style={{ fontSize: '0.8rem' }}>⭐ {s.rating}</div>
+                    <div style={{ fontSize: '0.7rem', color: 'var(--muted)' }}>📥 {s.installs}</div>
+                  </div>
+                  <button className={`installBtn ${installedSkills.has(i) ? 'installed' : ''}`}
+                    onClick={() => { const n = new Set(installedSkills); if (n.has(i)) n.delete(i); else n.add(i); setInstalledSkills(n); }}>
+                    {installedSkills.has(i) ? '✓' : (zh ? '安装' : 'Install')}
+                  </button>
                 </div>
               </div>
             ))}

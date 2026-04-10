@@ -6,8 +6,10 @@ import TGBot from './components/TGBot';
 import Trading from './components/Trading';
 import Marketplace from './components/Marketplace';
 import Onboarding from './components/Onboarding';
+import ApiKeys from './components/ApiKeys';
+import Settings from './components/Settings';
 
-const pages = ['skills', 'bot', 'trading', 'marketplace', 'onboarding'] as const;
+const pages = ['skills', 'bot', 'trading', 'marketplace', 'onboarding', 'apikeys', 'settings'] as const;
 type Page = typeof pages[number];
 
 export default function Home() {
@@ -24,6 +26,8 @@ export default function Home() {
         {page === 'trading' && <Trading lang={lang} />}
         {page === 'marketplace' && <Marketplace lang={lang} />}
         {page === 'onboarding' && <Onboarding lang={lang} onDone={() => setPage('bot')} />}
+        {page === 'apikeys' && <ApiKeys lang={lang} />}
+        {page === 'settings' && <Settings lang={lang} />}
       </main>
     </div>
   );

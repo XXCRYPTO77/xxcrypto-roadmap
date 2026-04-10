@@ -21,7 +21,10 @@ export default function Sidebar({ page, setPage, lang, setLang }: Props) {
     <aside className="sidebar">
       <div className="sidebarLogo">
         <span className="logoIcon">⚡</span>
-        <span>CoinW <span className="greenText">AI Agent</span></span>
+        <span style={{ flex: 1 }}>CoinW <span className="greenText">AI Agent</span></span>
+        <button className="langToggle" onClick={() => setLang(lang === 'zh' ? 'en' : 'zh')}>
+          {lang === 'zh' ? 'EN' : '中文'}
+        </button>
       </div>
       <nav className="sidebarNav">
         <div className="navSection">{zh ? '产品' : 'Product'}</div>
@@ -33,20 +36,17 @@ export default function Sidebar({ page, setPage, lang, setLang }: Props) {
           </button>
         ))}
         <div className="navSection" style={{ marginTop: 16 }}>{zh ? '设置' : 'Settings'}</div>
-        <button className="navItem">
+        <button className={`navItem ${page === 'apikeys' ? 'active' : ''}`} onClick={() => setPage('apikeys')}>
           <span className="navIcon">🔑</span>
           <span>API Keys</span>
         </button>
-        <button className="navItem">
+        <button className={`navItem ${page === 'settings' ? 'active' : ''}`} onClick={() => setPage('settings')}>
           <span className="navIcon">⚙️</span>
           <span>{zh ? '偏好设置' : 'Preferences'}</span>
         </button>
       </nav>
       <div className="sidebarFooter">
         <span>CoinW © 2025</span>
-        <button className="langToggle" onClick={() => setLang(lang === 'zh' ? 'en' : 'zh')}>
-          {lang === 'zh' ? 'EN' : '中文'}
-        </button>
       </div>
     </aside>
   );
