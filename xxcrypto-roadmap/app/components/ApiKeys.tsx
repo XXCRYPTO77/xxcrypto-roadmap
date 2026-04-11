@@ -1,5 +1,6 @@
 'use client';
 import { useState } from 'react';
+import GlassIcon from './GlassIcon';
 
 const initialKeys = [
   { id: 1, name: 'Trading Bot', key: 'ck_****...7f3a', permissions: ['读取', '现货交易'], created: '2025-01-10', status: true },
@@ -32,7 +33,10 @@ export default function ApiKeys({ lang }: { lang: string }) {
   return (
     <div className="pageContainer">
       <div className="pageHeader">
-        <h1 className="pageTitle">🔑 API Keys</h1>
+        <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
+          <GlassIcon name="key" size={36} />
+          <h1 className="pageTitle" style={{ marginBottom: 0 }}>API Keys</h1>
+        </div>
         <p className="pageSub">{zh ? '管理你的Agent API密钥和权限' : 'Manage your Agent API keys and permissions'}</p>
       </div>
 

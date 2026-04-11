@@ -14,6 +14,7 @@ const orders = [
 ];
 
 import { useState } from 'react';
+import GlassIcon from './GlassIcon';
 
 export default function Trading({ lang }: { lang: string }) {
   const zh = lang === 'zh';
@@ -21,7 +22,10 @@ export default function Trading({ lang }: { lang: string }) {
   return (
     <div className="pageContainer">
       <div className="pageHeader">
-        <h1 className="pageTitle">📈 {zh ? '交易面板' : 'Trading Dashboard'}</h1>
+        <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
+          <GlassIcon name="chart" size={36} />
+          <h1 className="pageTitle" style={{ marginBottom: 0 }}>{zh ? '交易面板' : 'Trading Dashboard'}</h1>
+        </div>
         <p className="pageSub">{zh ? '自然语言下单，AI帮你24小时盯盘' : 'Natural language trading, AI watches 24/7'}</p>
       </div>
 
@@ -44,7 +48,7 @@ export default function Trading({ lang }: { lang: string }) {
       {/* Holdings */}
       <div className="glass" style={{ marginBottom: '1.5rem', overflow: 'hidden' }}>
         <div style={{ padding: '14px 16px', borderBottom: '1px solid var(--border)', fontWeight: 700, fontSize: '0.9rem' }}>
-          📁 {zh ? '我的持仓' : 'My Holdings'}
+          {zh ? '我的持仓' : 'My Holdings'}
         </div>
         <table className="dataTable">
           <thead>
@@ -80,7 +84,7 @@ export default function Trading({ lang }: { lang: string }) {
       {/* Orders */}
       <div className="glass" style={{ marginBottom: '1.5rem', overflow: 'hidden' }}>
         <div style={{ padding: '14px 16px', borderBottom: '1px solid var(--border)', fontWeight: 700, fontSize: '0.9rem' }}>
-          📋 {zh ? '我的委托' : 'My Orders'}
+          {zh ? '我的委托' : 'My Orders'}
         </div>
         <table className="dataTable">
           <thead>
@@ -110,7 +114,10 @@ export default function Trading({ lang }: { lang: string }) {
 
       {/* Risk control */}
       <div className="glass" style={{ padding: '1.2rem' }}>
-        <div style={{ fontWeight: 700, fontSize: '0.9rem', marginBottom: 14 }}>🛡️ {zh ? '风控设置' : 'Risk Control'}</div>
+        <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 14 }}>
+          <GlassIcon name="shield" size={24} glow={false} />
+          <span style={{ fontWeight: 700, fontSize: '0.9rem' }}>{zh ? '风控设置' : 'Risk Control'}</span>
+        </div>
         <div style={{ display: 'flex', flexDirection: 'column', gap: 14 }}>
           {[
             { label: zh ? '最大回撤限制' : 'Max Drawdown', value: '-10%', pct: 40, color: 'var(--gold)' },

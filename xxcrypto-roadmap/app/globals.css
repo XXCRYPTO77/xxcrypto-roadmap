@@ -26,7 +26,7 @@ button { font-family: inherit; }
 
 /* Sidebar */
 .sidebar {
-  width: 260px; min-width: 260px; background: var(--sidebar); border-right: 1px solid var(--border);
+  width: 260px; min-width: 260px; background: linear-gradient(180deg, #111113, #0d0d10); border-right: 1px solid var(--border);
   display: flex; flex-direction: column; padding: 0; z-index: 10;
 }
 .sidebarLogo {
@@ -41,7 +41,7 @@ button { font-family: inherit; }
   transition: all 0.2s; border: none; background: none; width: 100%; text-align: left;
 }
 .navItem:hover { background: rgba(255,255,255,0.04); color: var(--text); }
-.navItem.active { background: rgba(82,39,255,0.08); color: var(--primary); font-weight: 600; }
+.navItem.active { background: rgba(82,39,255,0.08); color: var(--primary); font-weight: 600; box-shadow: 0 0 12px rgba(82,39,255,0.08); border: 1px solid rgba(82,39,255,0.12); }
 .navItem .navIcon { font-size: 1.1rem; width: 24px; text-align: center; }
 .navBadge {
   margin-left: auto; font-size: 0.65rem; padding: 2px 8px; border-radius: 10px;
@@ -65,11 +65,13 @@ button { font-family: inherit; }
 
 /* ===== GLASS CARD ===== */
 .glass {
-  background: var(--card); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
-  border: 1px solid var(--border); border-radius: 14px; transition: all 0.3s;
+  background: linear-gradient(135deg, rgba(255,255,255,0.04), rgba(82,39,255,0.02));
+  backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(82,39,255,0.08); border-radius: 14px; transition: all 0.3s;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.2), inset 0 1px 0 rgba(255,255,255,0.03);
 }
-.glass:hover { border-color: rgba(82,39,255,0.2); }
-.glassClickable:hover { transform: translateY(-2px); box-shadow: 0 6px 24px rgba(82,39,255,0.08); cursor: pointer; }
+.glass:hover { border-color: rgba(82,39,255,0.25); box-shadow: 0 4px 20px rgba(82,39,255,0.08), inset 0 1px 0 rgba(255,255,255,0.05); }
+.glassClickable:hover { transform: translateY(-2px); box-shadow: 0 8px 30px rgba(82,39,255,0.12), inset 0 1px 0 rgba(255,255,255,0.05); cursor: pointer; }
 
 /* ===== GRID ===== */
 .grid2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; }

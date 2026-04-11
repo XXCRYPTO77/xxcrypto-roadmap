@@ -1,5 +1,6 @@
 'use client';
 import { useState } from 'react';
+import GlassIcon from './GlassIcon';
 
 const agents = [
   { avatar: '🤖', name: { zh: 'Alpha猎手', en: 'Alpha Hunter' }, strategy: { zh: '趋势跟踪 + AI情绪分析', en: 'Trend Following + AI Sentiment' }, roi: '+156.3%', period: '90d', followers: '8.2k', rating: '4.9', risk: { zh: '高风险', en: 'High Risk' }, riskColor: 'var(--danger)' },
@@ -26,7 +27,10 @@ export default function Marketplace({ lang }: { lang: string }) {
   return (
     <div className="pageContainer">
       <div className="pageHeader">
-        <h1 className="pageTitle">🏪 Marketplace</h1>
+        <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
+          <GlassIcon name="shop" size={36} />
+          <h1 className="pageTitle" style={{ marginBottom: 0 }}>Marketplace</h1>
+        </div>
         <p className="pageSub">{zh ? '发现优秀Agent和社区Skills' : 'Discover top Agents and community Skills'}</p>
       </div>
 

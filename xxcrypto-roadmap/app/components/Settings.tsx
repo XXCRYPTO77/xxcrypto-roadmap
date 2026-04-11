@@ -1,5 +1,6 @@
 'use client';
 import { useState } from 'react';
+import GlassIcon from './GlassIcon';
 
 export default function Settings({ lang }: { lang: string }) {
   const zh = lang === 'zh';
@@ -26,7 +27,10 @@ export default function Settings({ lang }: { lang: string }) {
   return (
     <div className="pageContainer">
       <div className="pageHeader">
-        <h1 className="pageTitle">⚙️ {zh ? '偏好设置' : 'Preferences'}</h1>
+        <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
+          <GlassIcon name="gear" size={36} />
+          <h1 className="pageTitle" style={{ marginBottom: 0 }}>{zh ? '偏好设置' : 'Preferences'}</h1>
+        </div>
         <p className="pageSub">{zh ? '自定义你的Agent行为和推送偏好' : 'Customize your Agent behavior and notifications'}</p>
       </div>
 

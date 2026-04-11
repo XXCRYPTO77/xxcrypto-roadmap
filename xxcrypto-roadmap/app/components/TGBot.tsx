@@ -97,13 +97,13 @@ export default function TGBot({ lang }: { lang: string }) {
       <div className="chatMessages">
         {messages.map((m, i) => (
           <div key={i} className={`chatBubbleWrap ${m.sender}`}>
-            <div className="chatSender">{m.sender === 'user' ? '👤 You' : '🤖 CoinW Agent'}</div>
+            <div className="chatSender">{m.sender === 'user' ? 'You' : 'CoinW Agent'}</div>
             <div className={`chatBubble ${m.sender}`}>{m.text}</div>
           </div>
         ))}
         {typing && (
           <div className="chatBubbleWrap bot">
-            <div className="chatSender">🤖 CoinW Agent</div>
+            <div className="chatSender">CoinW Agent</div>
             <div className="chatBubble bot">
               <div className="typing"><span /><span /><span /></div>
             </div>

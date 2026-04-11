@@ -1,12 +1,13 @@
 'use client';
+import GlassIcon from './GlassIcon';
 
 const nav = [
-  { id: 'home', icon: '🏠', zh: '首页', en: 'Home' },
-  { id: 'skills', icon: '🧩', zh: 'Agent Skills', en: 'Agent Skills', badge: 'v1.0' },
-  { id: 'bot', icon: '💬', zh: 'TG Bot', en: 'TG Bot', badge: 'v1.1' },
-  { id: 'trading', icon: '📈', zh: '交易面板', en: 'Trading', badge: 'v1.2' },
-  { id: 'marketplace', icon: '🏪', zh: 'Marketplace', en: 'Marketplace', badge: 'v2.0' },
-  { id: 'onboarding', icon: '🐣', zh: '领养Bot', en: 'Adopt Bot' },
+  { id: 'home', icon: 'home', zh: '首页', en: 'Home' },
+  { id: 'skills', icon: 'puzzle', zh: 'Agent Skills', en: 'Agent Skills', badge: 'v1.0' },
+  { id: 'bot', icon: 'chat', zh: 'TG Bot', en: 'TG Bot', badge: 'v1.1' },
+  { id: 'trading', icon: 'chart', zh: '交易面板', en: 'Trading', badge: 'v1.2' },
+  { id: 'marketplace', icon: 'shop', zh: 'Marketplace', en: 'Marketplace', badge: 'v2.0' },
+  { id: 'onboarding', icon: 'egg', zh: '领养Bot', en: 'Adopt Bot' },
 ];
 
 interface Props {
@@ -31,18 +32,18 @@ export default function Sidebar({ page, setPage, lang, setLang }: Props) {
         <div className="navSection">{zh ? '产品' : 'Product'}</div>
         {nav.map(n => (
           <button key={n.id} className={`navItem ${page === n.id ? 'active' : ''}`} onClick={() => setPage(n.id)}>
-            <span className="navIcon">{n.icon}</span>
+            <GlassIcon name={n.icon} size={28} glow={page === n.id} />
             <span>{zh ? n.zh : n.en}</span>
             {n.badge && <span className="navBadge">{n.badge}</span>}
           </button>
         ))}
         <div className="navSection" style={{ marginTop: 16 }}>{zh ? '设置' : 'Settings'}</div>
         <button className={`navItem ${page === 'apikeys' ? 'active' : ''}`} onClick={() => setPage('apikeys')}>
-          <span className="navIcon">🔑</span>
+          <GlassIcon name="key" size={28} glow={page === 'apikeys'} />
           <span>API Keys</span>
         </button>
         <button className={`navItem ${page === 'settings' ? 'active' : ''}`} onClick={() => setPage('settings')}>
-          <span className="navIcon">⚙️</span>
+          <GlassIcon name="gear" size={28} glow={page === 'settings'} />
           <span>{zh ? '偏好设置' : 'Preferences'}</span>
         </button>
       </nav>
