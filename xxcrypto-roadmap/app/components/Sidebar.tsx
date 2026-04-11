@@ -1,6 +1,7 @@
 'use client';
 
 const nav = [
+  { id: 'home', icon: '🏠', zh: '首页', en: 'Home' },
   { id: 'skills', icon: '🧩', zh: 'Agent Skills', en: 'Agent Skills', badge: 'v1.0' },
   { id: 'bot', icon: '💬', zh: 'TG Bot', en: 'TG Bot', badge: 'v1.1' },
   { id: 'trading', icon: '📈', zh: '交易面板', en: 'Trading', badge: 'v1.2' },
