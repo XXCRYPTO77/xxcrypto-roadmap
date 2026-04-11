@@ -55,7 +55,7 @@ export default function SkillStore({ lang }: { lang: string }) {
             </div>
             <div className="skillCardTitle">{zh ? s.zh : s.en}</div>
             <div className="skillCardDesc">{zh ? s.descZh : s.descEn}</div>
-            <div style={{ fontSize: '0.72rem', color: 'var(--green)', fontStyle: 'italic', opacity: 0.7 }}>{s.hook}</div>
+            <div style={{ fontSize: '0.72rem', color: 'var(--primary)', fontStyle: 'italic', opacity: 0.7 }}>{s.hook}</div>
             <div className="skillCardFooter">
               <span style={{ fontSize: '0.7rem', color: 'var(--muted)' }}>📥 {s.installs}</span>
               <button

@@ -37,7 +37,7 @@ export default function ApiKeys({ lang }: { lang: string }) {
       </div>
 
       {/* Security notice */}
-      <div className="glass" style={{ padding: '14px 18px', marginBottom: '1.5rem', display: 'flex', gap: 12, alignItems: 'flex-start', borderColor: 'rgba(0,212,126,0.15)' }}>
+      <div className="glass" style={{ padding: '14px 18px', marginBottom: '1.5rem', display: 'flex', gap: 12, alignItems: 'flex-start', borderColor: 'rgba(82,39,255,0.15)' }}>
         <span style={{ fontSize: '1.2rem' }}>🛡️</span>
         <div style={{ fontSize: '0.82rem' }}>
           <div style={{ fontWeight: 700, marginBottom: 4 }}>{zh ? '安全提示' : 'Security Notice'}</div>
@@ -50,7 +50,7 @@ export default function ApiKeys({ lang }: { lang: string }) {
         <div style={{ padding: '14px 16px', borderBottom: '1px solid var(--border)', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
           <span style={{ fontWeight: 700, fontSize: '0.9rem' }}>{zh ? '我的密钥' : 'My Keys'}</span>
           <button onClick={() => setShowCreate(!showCreate)} style={{
-            padding: '6px 14px', borderRadius: 8, border: '1px solid var(--green)', background: showCreate ? 'var(--green)' : 'transparent',
+            padding: '6px 14px', borderRadius: 8, border: '1px solid var(--primary)', background: showCreate ? 'var(--green)' : 'transparent',
             color: showCreate ? '#000' : 'var(--green)', fontSize: '0.75rem', fontWeight: 700, cursor: 'pointer', transition: 'all 0.2s'
           }}>
             {showCreate ? '✕' : (zh ? '+ 创建密钥' : '+ Create Key')}
@@ -76,7 +76,7 @@ export default function ApiKeys({ lang }: { lang: string }) {
                 <td>
                   <button onClick={() => setKeys(keys.map(x => x.id === k.id ? { ...x, status: !x.status } : x))} style={{
                     padding: '4px 10px', borderRadius: 6, border: 'none', fontSize: '0.72rem', fontWeight: 600, cursor: 'pointer',
-                    background: k.status ? 'rgba(0,212,126,0.1)' : 'rgba(239,68,68,0.1)',
+                    background: k.status ? 'rgba(82,39,255,0.1)' : 'rgba(239,68,68,0.1)',
                     color: k.status ? 'var(--green)' : 'var(--danger)',
                   }}>
                     {k.status ? (zh ? '已启用' : 'Active') : (zh ? '已禁用' : 'Disabled')}
@@ -118,8 +118,8 @@ export default function ApiKeys({ lang }: { lang: string }) {
             </div>
           </div>
           <button onClick={createKey} style={{
-            padding: '10px 24px', borderRadius: 10, border: 'none', background: 'var(--green)',
-            color: '#000', fontWeight: 700, fontSize: '0.85rem', cursor: 'pointer', opacity: newName.trim() ? 1 : 0.4
+            padding: '10px 24px', borderRadius: 10, border: 'none', background: 'var(--primary)',
+            color: '#fff', fontWeight: 700, fontSize: '0.85rem', cursor: 'pointer', opacity: newName.trim() ? 1 : 0.4
           }}>
             {zh ? '🔑 生成密钥' : '🔑 Generate Key'}
           </button>

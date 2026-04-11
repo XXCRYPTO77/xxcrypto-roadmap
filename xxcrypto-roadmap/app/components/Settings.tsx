@@ -54,7 +54,7 @@ export default function Settings({ lang }: { lang: string }) {
               style={{
                 padding: '8px 18px', borderRadius: 10, border: '1px solid',
                 borderColor: coins.has(c) ? 'var(--green)' : 'var(--border)',
-                background: coins.has(c) ? 'rgba(0,212,126,0.08)' : 'transparent',
+                background: coins.has(c) ? 'rgba(82,39,255,0.08)' : 'transparent',
                 color: coins.has(c) ? 'var(--green)' : 'var(--muted)',
                 fontWeight: 600, fontSize: '0.82rem', cursor: 'pointer', transition: 'all 0.2s'
               }}>
@@ -107,7 +107,7 @@ export default function Settings({ lang }: { lang: string }) {
       {/* Save */}
       <button onClick={save} style={{
         padding: '12px 32px', borderRadius: 10, border: 'none',
-        background: saved ? 'rgba(0,212,126,0.15)' : 'var(--green)',
+        background: saved ? 'rgba(82,39,255,0.15)' : 'var(--green)',
         color: saved ? 'var(--green)' : '#000', fontWeight: 700, fontSize: '0.9rem', cursor: 'pointer', transition: 'all 0.3s'
       }}>
         {saved ? (zh ? '✓ 已保存' : '✓ Saved') : (zh ? '💾 保存设置' : '💾 Save Settings')}

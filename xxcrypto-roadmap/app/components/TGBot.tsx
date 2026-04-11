@@ -83,10 +83,10 @@ export default function TGBot({ lang }: { lang: string }) {
     <div className="chatContainer">
       {/* Header */}
       <div style={{ padding: '14px 20px', borderBottom: '1px solid var(--border)', display: 'flex', alignItems: 'center', gap: 12, background: 'rgba(17,17,19,0.6)' }}>
-        <div style={{ width: 36, height: 36, borderRadius: '50%', background: 'rgba(0,212,126,0.15)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '1.1rem' }}>🤖</div>
+        <div style={{ width: 36, height: 36, borderRadius: '50%', background: 'rgba(82,39,255,0.15)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '1.1rem' }}>🤖</div>
         <div>
           <div style={{ fontWeight: 700, fontSize: '0.9rem' }}>CoinW AI Agent</div>
-          <div style={{ fontSize: '0.7rem', color: 'var(--green)' }}>● {zh ? '在线' : 'Online'}</div>
+          <div style={{ fontSize: '0.7rem', color: 'var(--primary)' }}>● {zh ? '在线' : 'Online'}</div>
         </div>
         <div style={{ marginLeft: 'auto', display: 'flex', gap: 8 }}>
           <span className="badge badgeGreen">4 Skills</span>

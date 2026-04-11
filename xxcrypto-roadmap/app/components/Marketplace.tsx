@@ -72,7 +72,7 @@ export default function Marketplace({ lang }: { lang: string }) {
                 <span>⭐ {a.rating}</span>
               </div>
               <button className="followBtn" onClick={() => { const n = new Set(following); if (n.has(i)) n.delete(i); else n.add(i); setFollowing(n); }}
-                style={following.has(i) ? { background: 'var(--green)', color: '#000', borderColor: 'var(--green)' } : {}}>
+                style={following.has(i) ? { background: 'var(--primary)', color: '#fff', borderColor: 'var(--primary)' } : {}}>
                 {following.has(i) ? (zh ? '✓ 已跟单' : '✓ Following') : (zh ? '跟单' : 'Follow')}
               </button>
             </div>
@@ -106,7 +106,7 @@ export default function Marketplace({ lang }: { lang: string }) {
             ))}
           </div>
           <div style={{ textAlign: 'center', marginTop: '2rem' }}>
-            <button className="glass glassClickable" style={{ padding: '12px 28px', fontWeight: 700, fontSize: '0.88rem', color: 'var(--green)', border: '1px solid rgba(0,212,126,0.2)', cursor: 'pointer', background: 'rgba(0,212,126,0.04)' }}>
+            <button className="glass glassClickable" style={{ padding: '12px 28px', fontWeight: 700, fontSize: '0.88rem', color: 'var(--primary)', border: '1px solid rgba(82,39,255,0.2)', cursor: 'pointer', background: 'rgba(82,39,255,0.04)' }}>
               🚀 {zh ? '发布你的Skill' : 'Publish Your Skill'}
             </button>
           </div>

@@ -130,8 +130,8 @@ export default function Trading({ lang }: { lang: string }) {
         <div style={{ textAlign: 'center', marginTop: 16 }}>
           <button onClick={() => setKilled(!killed)} style={{
             padding: '8px 24px', borderRadius: 8, border: '1px solid',
-            borderColor: killed ? 'rgba(0,212,126,0.3)' : 'rgba(239,68,68,0.3)',
-            background: killed ? 'rgba(0,212,126,0.1)' : 'rgba(239,68,68,0.1)',
+            borderColor: killed ? 'rgba(82,39,255,0.3)' : 'rgba(239,68,68,0.3)',
+            background: killed ? 'rgba(82,39,255,0.1)' : 'rgba(239,68,68,0.1)',
             color: killed ? 'var(--green)' : 'var(--danger)', fontWeight: 700,
             fontSize: '0.82rem', cursor: 'pointer', transition: 'all 0.3s'
           }}>

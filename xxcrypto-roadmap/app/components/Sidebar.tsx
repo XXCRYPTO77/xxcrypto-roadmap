@@ -21,8 +21,8 @@ export default function Sidebar({ page, setPage, lang, setLang }: Props) {
   return (
     <aside className="sidebar">
       <div className="sidebarLogo">
-        <span className="logoIcon">⚡</span>
-        <span style={{ flex: 1 }}>CoinW <span className="greenText">AI Agent</span></span>
+        <img src="/coinw-logo.png" alt="CoinW" style={{ height: 24 }} />
+        <span style={{ flex: 1 }}><span className="greenText">AI Agent</span></span>
         <button className="langToggle" onClick={() => setLang(lang === 'zh' ? 'en' : 'zh')}>
           {lang === 'zh' ? 'EN' : '中文'}
         </button>

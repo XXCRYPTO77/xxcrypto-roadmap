@@ -33,9 +33,9 @@ export default function Homepage({ lang, onNavigate }: Props) {
     <div style={{ overflow: 'hidden' }}>
       {/* ===== HERO ===== */}
       <section style={{ padding: '5rem 2rem 3rem', textAlign: 'center', position: 'relative' }}>
-        <div style={{ position: 'absolute', top: '-100px', left: '50%', transform: 'translateX(-50%)', width: 600, height: 600, borderRadius: '50%', background: 'var(--green)', filter: 'blur(200px)', opacity: 0.06, pointerEvents: 'none' }} />
+        <div style={{ position: 'absolute', top: '-100px', left: '50%', transform: 'translateX(-50%)', width: 600, height: 600, borderRadius: '50%', background: 'var(--primary)', filter: 'blur(200px)', opacity: 0.06, pointerEvents: 'none' }} />
         
-        <div style={{ display: 'inline-block', padding: '6px 16px', borderRadius: 20, background: 'rgba(0,212,126,0.08)', border: '1px solid rgba(0,212,126,0.2)', fontSize: '0.78rem', color: 'var(--green)', fontWeight: 600, marginBottom: 20 }}>
+        <div style={{ display: 'inline-block', padding: '6px 16px', borderRadius: 20, background: 'rgba(82,39,255,0.08)', border: '1px solid rgba(82,39,255,0.2)', fontSize: '0.78rem', color: 'var(--primary)', fontWeight: 600, marginBottom: 20 }}>
           🚀 {zh ? '下一代AI交易Agent平台' : 'Next-Gen AI Trading Agent Platform'}
         </div>
 
@@ -55,8 +55,8 @@ export default function Homepage({ lang, onNavigate }: Props) {
 
         <div style={{ display: 'flex', gap: 12, justifyContent: 'center', flexWrap: 'wrap' }}>
           <button onClick={() => onNavigate('onboarding')} style={{
-            padding: '14px 32px', borderRadius: 12, border: 'none', background: 'var(--green)',
-            color: '#000', fontWeight: 700, fontSize: '0.95rem', cursor: 'pointer', transition: 'all 0.2s'
+            padding: '14px 32px', borderRadius: 12, border: 'none', background: 'var(--primary)',
+            color: '#fff', fontWeight: 700, fontSize: '0.95rem', cursor: 'pointer', transition: 'all 0.2s'
           }}>
             🐣 {zh ? '立即领养你的Bot' : 'Adopt Your Bot Now'}
           </button>
@@ -98,7 +98,7 @@ export default function Homepage({ lang, onNavigate }: Props) {
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: 14 }}>
               <div>
                 <div style={{ fontSize: '0.72rem', color: 'var(--muted)', marginBottom: 4 }}>📊 {zh ? '市场概览' : 'Market Overview'}</div>
-                <div style={{ fontSize: '1.8rem', fontWeight: 800 }}>$87,432<span style={{ fontSize: '0.85rem', color: 'var(--green)', marginLeft: 8 }}>+2.3%</span></div>
+                <div style={{ fontSize: '1.8rem', fontWeight: 800 }}>$87,432<span style={{ fontSize: '0.85rem', color: 'var(--primary)', marginLeft: 8 }}>+2.3%</span></div>
                 <div style={{ fontSize: '0.78rem', color: 'var(--muted)' }}>BTC/USDT</div>
               </div>
               <span className="badge badgeGreen">LIVE</span>
@@ -107,11 +107,11 @@ export default function Homepage({ lang, onNavigate }: Props) {
             <svg viewBox="0 0 300 60" width="100%" height="60" style={{ display: 'block' }}>
               <defs>
                 <linearGradient id="chartGrad" x1="0" y1="0" x2="0" y2="1">
-                  <stop offset="0%" stopColor="#00d47e" stopOpacity="0.3" />
-                  <stop offset="100%" stopColor="#00d47e" stopOpacity="0" />
+                  <stop offset="0%" stopColor="#5227ff" stopOpacity="0.3" />
+                  <stop offset="100%" stopColor="#5227ff" stopOpacity="0" />
                 </linearGradient>
               </defs>
-              <path d="M0,45 L30,40 L60,42 L90,35 L120,38 L150,25 L180,28 L210,15 L240,18 L270,10 L300,12" fill="none" stroke="#00d47e" strokeWidth="2" />
+              <path d="M0,45 L30,40 L60,42 L90,35 L120,38 L150,25 L180,28 L210,15 L240,18 L270,10 L300,12" fill="none" stroke="#5227ff" strokeWidth="2" />
               <path d="M0,45 L30,40 L60,42 L90,35 L120,38 L150,25 L180,28 L210,15 L240,18 L270,10 L300,12 L300,60 L0,60 Z" fill="url(#chartGrad)" />
             </svg>
           </div>
@@ -119,10 +119,10 @@ export default function Homepage({ lang, onNavigate }: Props) {
           {/* Sentiment */}
           <div className="glass" style={{ gridColumn: 'span 4', padding: '1.4rem', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center' }}>
             <div style={{ fontSize: '0.72rem', color: 'var(--muted)', marginBottom: 8 }}>😊 {zh ? '市场情绪' : 'Sentiment'}</div>
-            <div style={{ fontSize: '2.2rem', fontWeight: 800, color: 'var(--green)' }}>68</div>
-            <div style={{ fontSize: '0.78rem', color: 'var(--green)', fontWeight: 600 }}>{zh ? '贪婪' : 'Greed'}</div>
+            <div style={{ fontSize: '2.2rem', fontWeight: 800, color: 'var(--primary)' }}>68</div>
+            <div style={{ fontSize: '0.78rem', color: 'var(--primary)', fontWeight: 600 }}>{zh ? '贪婪' : 'Greed'}</div>
             <div style={{ width: '80%', height: 6, borderRadius: 3, background: 'rgba(255,255,255,0.06)', marginTop: 10 }}>
-              <div style={{ width: '68%', height: '100%', borderRadius: 3, background: 'linear-gradient(90deg, #f59e0b, #00d47e)' }} />
+              <div style={{ width: '68%', height: '100%', borderRadius: 3, background: 'linear-gradient(90deg, #f59e0b, #5227ff)' }} />
             </div>
           </div>
 
@@ -130,7 +130,7 @@ export default function Homepage({ lang, onNavigate }: Props) {
           <div className="glass glassClickable" onClick={() => onNavigate('trading')} style={{ gridColumn: 'span 4', padding: '1.4rem', cursor: 'pointer' }}>
             <div style={{ fontSize: '0.72rem', color: 'var(--muted)', marginBottom: 8 }}>📁 {zh ? '我的持仓' : 'Portfolio'}</div>
             <div style={{ fontSize: '1.5rem', fontWeight: 800, marginBottom: 4 }}>$152,847</div>
-            <div style={{ fontSize: '0.82rem', color: 'var(--green)', fontWeight: 600, marginBottom: 12 }}>+$3,218 (+2.1%)</div>
+            <div style={{ fontSize: '0.82rem', color: 'var(--primary)', fontWeight: 600, marginBottom: 12 }}>+$3,218 (+2.1%)</div>
             {['BTC 1.25', 'ETH 15.8', 'SOL 120'].map((h, i) => (
               <div key={i} style={{ display: 'flex', justifyContent: 'space-between', fontSize: '0.75rem', padding: '3px 0', color: 'var(--muted)' }}>
                 <span>{h.split(' ')[0]}</span><span>{h.split(' ')[1]}</span>
@@ -142,14 +142,14 @@ export default function Homepage({ lang, onNavigate }: Props) {
           <div className="glass glassClickable" onClick={() => onNavigate('bot')} style={{ gridColumn: 'span 4', padding: '1.4rem', cursor: 'pointer' }}>
             <div style={{ fontSize: '0.72rem', color: 'var(--muted)', marginBottom: 8 }}>💬 TG Bot</div>
             <div style={{ background: '#111', borderRadius: 10, padding: 10, display: 'flex', flexDirection: 'column', gap: 6 }}>
-              <div style={{ padding: '6px 10px', borderRadius: 8, background: 'rgba(0,212,126,0.12)', fontSize: '0.72rem', alignSelf: 'flex-end', color: '#fff' }}>
+              <div style={{ padding: '6px 10px', borderRadius: 8, background: 'rgba(82,39,255,0.12)', fontSize: '0.72rem', alignSelf: 'flex-end', color: '#fff' }}>
                 {zh ? '帮我查BTC' : 'Check BTC'}
               </div>
               <div style={{ padding: '6px 10px', borderRadius: 8, background: 'rgba(255,255,255,0.05)', fontSize: '0.72rem', alignSelf: 'flex-start', color: 'var(--text)' }}>
                 📊 BTC $87,432 (+2.3%)
               </div>
             </div>
-            <div style={{ fontSize: '0.7rem', color: 'var(--green)', marginTop: 8, fontWeight: 600 }}>● {zh ? '在线' : 'Online'}</div>
+            <div style={{ fontSize: '0.7rem', color: 'var(--primary)', marginTop: 8, fontWeight: 600 }}>● {zh ? '在线' : 'Online'}</div>
           </div>
 
           {/* Agent Skills */}
@@ -192,9 +192,9 @@ export default function Homepage({ lang, onNavigate }: Props) {
               <div key={i} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '6px 0', borderBottom: '1px solid rgba(255,255,255,0.03)' }}>
                 <span style={{ fontSize: '0.82rem', fontWeight: 600 }}>{s.name}</span>
                 <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
-                  <span style={{ fontSize: '0.82rem', color: 'var(--green)', fontWeight: 600 }}>{s.change}</span>
+                  <span style={{ fontSize: '0.82rem', color: 'var(--primary)', fontWeight: 600 }}>{s.change}</span>
                   <div style={{ width: 50, height: 4, borderRadius: 2, background: 'rgba(255,255,255,0.06)' }}>
-                    <div style={{ width: `${parseFloat(s.change) * 12}%`, height: '100%', borderRadius: 2, background: 'var(--green)' }} />
+                    <div style={{ width: `${parseFloat(s.change) * 12}%`, height: '100%', borderRadius: 2, background: 'var(--primary)' }} />
                   </div>
                 </div>
               </div>
@@ -240,8 +240,8 @@ export default function Homepage({ lang, onNavigate }: Props) {
           {zh ? '30秒创建你的专属AI交易Agent' : 'Create your personalized AI trading Agent in 30 seconds'}
         </p>
         <button onClick={() => onNavigate('onboarding')} style={{
-          padding: '14px 36px', borderRadius: 12, border: 'none', background: 'var(--green)',
-          color: '#000', fontWeight: 700, fontSize: '1rem', cursor: 'pointer'
+          padding: '14px 36px', borderRadius: 12, border: 'none', background: 'var(--primary)',
+          color: '#fff', fontWeight: 700, fontSize: '1rem', cursor: 'pointer'
         }}>
           {zh ? '🐣 立即开始' : '🐣 Get Started'}
         </button>
