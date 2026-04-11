@@ -1,0 +1,79 @@
+.hero {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 60px 20px;
+  position: relative;
+}
+.logo {
+  font-family: var(--font-h);
+  font-size: clamp(3rem, 8vw, 6rem);
+  letter-spacing: 4px;
+  line-height: 1;
+  margin-bottom: 8px;
+  background: linear-gradient(135deg, #fff 40%, var(--accent));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: fadeUp .8s ease both;
+}
+.subtitle {
+  font-size: clamp(1rem, 2.5vw, 1.5rem);
+  color: var(--text-sec);
+  margin-bottom: 8px;
+  animation: fadeUp .8s ease .15s both;
+}
+.subtitleCn {
+  font-size: clamp(.9rem, 2vw, 1.2rem);
+  color: var(--text-dim);
+  margin-bottom: 48px;
+  animation: fadeUp .8s ease .25s both;
+}
+.badges {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  justify-content: center;
+  animation: fadeUp .8s ease .4s both;
+}
+.badge {
+  background: var(--glass-bg);
+  backdrop-filter: blur(16px);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius);
+  padding: 20px 24px;
+  max-width: 260px;
+  text-align: left;
+  transition: all .3s;
+}
+.badge:hover {
+  transform: translateY(-4px);
+  border-color: var(--accent);
+  box-shadow: var(--accent-glow);
+  background: var(--glass-hover);
+}
+.badgeIcon {
+  font-size: 24px;
+  margin-bottom: 8px;
+}
+.badgeTitle {
+  font-family: var(--font-h);
+  font-size: 1.3rem;
+  letter-spacing: 1px;
+  color: var(--accent);
+  margin-bottom: 4px;
+}
+.badgeDesc {
+  font-size: .85rem;
+  color: var(--text-sec);
+  line-height: 1.5;
+}
+.scrollHint {
+  position: absolute;
+  bottom: 30px;
+  animation: float 2s ease infinite;
+  color: var(--text-dim);
+  font-size: 24px;
+}

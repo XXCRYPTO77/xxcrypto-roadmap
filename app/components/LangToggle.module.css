@@ -1,0 +1,21 @@
+.toggle {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 100;
+  background: var(--glass-bg);
+  backdrop-filter: blur(12px);
+  border: 1px solid var(--glass-border);
+  border-radius: 20px;
+  padding: 8px 16px;
+  color: var(--text);
+  font-size: 13px;
+  cursor: pointer;
+  transition: all .3s;
+  font-family: var(--font-b);
+}
+.toggle:hover {
+  background: var(--glass-hover);
+  border-color: var(--accent);
+  box-shadow: var(--accent-glow);
+}

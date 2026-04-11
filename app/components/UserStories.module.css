@@ -1,0 +1,95 @@
+.section {
+  padding: 100px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.title {
+  font-family: var(--font-h);
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  text-align: center;
+  margin-bottom: 12px;
+  letter-spacing: 2px;
+}
+.sub {
+  text-align: center;
+  color: var(--text-sec);
+  margin-bottom: 48px;
+  font-size: .95rem;
+}
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+}
+.card {
+  background: var(--glass-bg);
+  backdrop-filter: blur(16px);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius);
+  padding: 28px 24px;
+  transition: all .3s;
+}
+.card:hover {
+  transform: translateY(-6px);
+  border-color: var(--accent);
+  box-shadow: var(--accent-glow);
+  background: var(--glass-hover);
+}
+.cardIcon {
+  width: 48px;
+  height: 48px;
+  background: var(--accent-dim);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  margin-bottom: 16px;
+}
+.cardTitle {
+  font-family: var(--font-h);
+  font-size: 1.4rem;
+  letter-spacing: 1px;
+  margin-bottom: 4px;
+  color: var(--accent);
+}
+.cardTag {
+  font-size: .75rem;
+  color: var(--text-dim);
+  margin-bottom: 10px;
+}
+.cardDesc {
+  font-size: .88rem;
+  color: var(--text-sec);
+  line-height: 1.6;
+  margin-bottom: 14px;
+}
+.bubble {
+  background: rgba(255,255,255,.06);
+  border-radius: 12px 12px 12px 2px;
+  padding: 10px 14px;
+  font-size: .8rem;
+  color: var(--text-sec);
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+}
+.bubbleBot {
+  border-radius: 12px 12px 2px 12px;
+  background: rgba(0,212,126,.08);
+  margin-top: 8px;
+}
+.bubbleAvatar {
+  flex-shrink: 0;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: var(--accent-dim);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+}
+.bubbleText {
+  line-height: 1.5;
+}
